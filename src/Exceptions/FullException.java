@@ -1,5 +1,9 @@
 package Exceptions;
 
-public class FullException {
 
-}
+public class FullException extends Exception {
+		public FullException(String s) {
+			super(s);
+		}
+
+	}
