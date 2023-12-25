@@ -14,7 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import project.Customer;
 
-public class Control_CreateAccount {
+public class Controller_CreateAccount {
 
 	@FXML 
 	private AnchorPane anchorpane;

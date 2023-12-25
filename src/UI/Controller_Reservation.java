@@ -137,7 +137,7 @@ public class Controller_Reservation {
 	}
 	
 	public void deleteBooking(ActionEvent e) { // handle delete booking
-		FlightReservation selectedreservation = new Reservation();
+		FlightReservation selectedreservation = new FlightReservation();
 		selectedreservation = reservationidtable.getSelectionModel().getSelectedItem(); // get the selected reservationid
 		try {
 			Booking.deleteBooking(selectedreservation.getReservationid()); // delete the selected reserbationid
