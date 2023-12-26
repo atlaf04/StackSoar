@@ -14,28 +14,28 @@
          <font>
             <Font name="Arial Hebrew" size="49.0" />
          </font></Label>
-      <TextField fx:id="address_input" layoutX="321.0" layoutY="210.0" />
-      <TextField fx:id="state_input" layoutX="321.0" layoutY="273.0" />
-      <TextField fx:id="securityanswer" layoutX="539.0" layoutY="336.0" />
+      <TextField fx:id="addresstf" layoutX="321.0" layoutY="210.0" />
+      <TextField fx:id="statetf" layoutX="321.0" layoutY="273.0" />
+      <TextField fx:id="securityanswertf" layoutX="539.0" layoutY="336.0" />
       <Label fx:id="securityQuestion" layoutX="537.0" layoutY="318.0" text=" What is your favorite Programming Language?" />
       <Label fx:id="address_label" layoutX="322.0" layoutY="194.0" text="Address" />
       <Label fx:id="State_label" layoutX="323.0" layoutY="247.0" prefHeight="17.0" prefWidth="103.0" text="State" />
       <Button layoutX="44.0" layoutY="27.0" mnemonicParsing="false" onAction="#back" text="Back" />
-      <TextField fx:id="FIrstName_input" layoutX="109.0" layoutY="210.0" />
+      <TextField fx:id="firstnametf" layoutX="109.0" layoutY="210.0" />
       <Text fx:id="FirstName_label" layoutX="97.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
-      <TextField fx:id="LastName_input" layoutX="109.0" layoutY="273.0" />
+      <TextField fx:id="lastnametf" layoutX="109.0" layoutY="273.0" />
       <Text fx:id="LastName_Label" layoutX="97.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
-      <TextField fx:id="ssn_input" layoutX="109.0" layoutY="321.0" />
+      <TextField fx:id="ssntf" layoutX="109.0" layoutY="321.0" />
       <Text fx:id="SSN_label" layoutX="99.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Social Sercuity Number" />
-      <TextField fx:id="zipcode_input" layoutX="321.0" layoutY="321.0" />
+      <TextField fx:id="ziptf" layoutX="321.0" layoutY="321.0" />
       <Text fx:id="zipcode_label" layoutX="322.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zipcode" />
-      <TextField fx:id="password_input" layoutX="539.0" layoutY="273.0" />
+      <TextField fx:id="passwordtf" layoutX="539.0" layoutY="273.0" />
       <Text fx:id="account_info_label" layoutX="538.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Information">
          <font>
             <Font name="Arial" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="email_input" layoutX="539.0" layoutY="210.0" prefHeight="26.0" prefWidth="160.0" />
+      <TextField fx:id="emailtf" layoutX="539.0" layoutY="210.0" prefHeight="26.0" prefWidth="160.0" />
       <Text fx:id="passwordLabel" layoutX="539.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
       <Text fx:id="email_label" layoutX="539.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
       <Text fx:id="information_label" layoutX="244.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Information ">

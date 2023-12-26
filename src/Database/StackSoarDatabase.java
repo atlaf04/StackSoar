@@ -22,7 +22,7 @@ public class StackSoarDatabase {
     public static void createCustomerTable() throws Exception {
         try {
             Connection con = getConnection();
-            PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS Customer_T(" +
+            PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS Customer_Table(" +
                     "CustomerEmail VARCHAR(100) NOT NULL," +
                     "CustomerPassword VARCHAR(30)," +
                     "CustomerFName VARCHAR(25)," +
@@ -102,7 +102,7 @@ public class StackSoarDatabase {
     public static ArrayList<String> get() throws Exception {
         try {
             Connection con = getConnection();
-            PreparedStatement statement = con.prepareStatement("SELECT * FROM Customer_T");
+            PreparedStatement statement = con.prepareStatement("SELECT * FROM Customer_Table");
             ResultSet result = statement.executeQuery();
             ArrayList<String> list = new ArrayList<>();
             while (result.next()) {
@@ -150,7 +150,7 @@ public class StackSoarDatabase {
         Scanner input = new Scanner(System.in);
         try {
             String driver = "com.mysql.cj.jdbc.Driver";
-            String url = "jdbc:mysql://127.0.0.1:3306/?user=root"; // Enter YOUR url for localhost
+            String url = "jdbc:mysql://127.0.0.1:3306/StackSoar"; // Enter YOUR url for localhost
             String username = "root";
             String password = "August13";
             Class.forName(driver);
