@@ -56,7 +56,7 @@ public class Controller_MainLogin {
 	            if (response == ButtonType.OK) {
 	                // Use the buttontypke.ok to make the scene switch if the user clicks okay. 
 	                try {
-	                	root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
+	                	root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 	        			
 	        			primarystage = (Stage)((Node)e.getSource()).getScene().getWindow();
 	        			scene = new Scene(root,900,600);
@@ -90,7 +90,7 @@ public class Controller_MainLogin {
 		
 		public void handleManageReservationsbutton(ActionEvent e) {
 			try {
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightReservations.fxml"));
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightReservation.fxml"));
 				root = loader.load();
 				Controller_Reservation reservationcontroller = loader.getController();
 				reservationcontroller.setEmail(this.getEmail());

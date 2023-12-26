@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="paneone" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller_CreateAccount">
    <children>
-      <Button layoutX="359.0" layoutY="383.0" mnemonicParsing="false" text="Create Account" />
+      <Button layoutX="359.0" layoutY="383.0" mnemonicParsing="false" onAction="#createAccount" text="Create Account" />
       <Label fx:id="welcome_label" layoutX="160.0" layoutY="27.0" text="Welcome to StackSoar">
          <font>
             <Font name="Arial Hebrew" size="49.0" />
@@ -20,7 +20,7 @@
       <Label fx:id="securityQuestion" layoutX="537.0" layoutY="318.0" text=" What is your favorite Programming Language?" />
       <Label fx:id="address_label" layoutX="322.0" layoutY="194.0" text="Address" />
       <Label fx:id="State_label" layoutX="323.0" layoutY="247.0" prefHeight="17.0" prefWidth="103.0" text="State" />
-      <Button layoutX="44.0" layoutY="27.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="44.0" layoutY="27.0" mnemonicParsing="false" onAction="#back" text="Back" />
       <TextField fx:id="FIrstName_input" layoutX="109.0" layoutY="210.0" />
       <Text fx:id="FirstName_label" layoutX="97.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
       <TextField fx:id="LastName_input" layoutX="109.0" layoutY="273.0" />

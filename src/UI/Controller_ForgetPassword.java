@@ -40,7 +40,7 @@ public class Controller_ForgetPassword {
             if (response == ButtonType.OK) {
                 // Use the buttontypke.ok to make the scene switch if the user clicks okay. 
                 try {
-                	root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
+                	root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         			
         			primarystage = (Stage)((Node)e.getSource()).getScene().getWindow();
         			scene = new Scene(root,900,600);
@@ -58,7 +58,7 @@ public class Controller_ForgetPassword {
 	public void retrievepassword (ActionEvent e){
         // Retrieve Password button click
 
-		String email = emailtf.getText().trim(); // Get entered email
+		String email = emailtf.getText().trim(); // Get entered email, trim takes away all of the blank space
 		String securityanswer = securityanswertf.getText().trim(); // Get entered security answer
 		
 		
