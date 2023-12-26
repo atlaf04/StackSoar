@@ -87,8 +87,8 @@ public class Controller_Login { //LEXI
     public void handleCreateAccountButtonAction(ActionEvent e) { 
         // Handling the "Create Account" button click
 
-    	//Switch to "CreateAccount.fxml" scene
-    	switchScene("CreateAccount.fxml",e);
+    	//Switch to "AccountCreation.fxml" scene
+    	switchScene("AccountCreation.fxml",e);
     		
     	
     }
@@ -98,7 +98,7 @@ public class Controller_Login { //LEXI
     	//Switch to "ForgetPassword.fxml" scene
     	try {
         	
-    		switchScene("ForgetPassword.fxml",e);
+    		switchScene("ForgotPassword.fxml",e);
         	} catch (Exception ex) {
         		
         	}
