@@ -58,7 +58,7 @@ public class Controller_Login { //LEXI
 
     				FXMLLoader loader = new FXMLLoader(getClass().getResource("MainLogin.fxml"));
     				root = loader.load();
-    				Controller_MainLoginController mainlogincontroller = loader.getController();
+    				Controller_MainLogin mainlogincontroller = loader.getController();
     				
     				mainlogincontroller.setEmail(username);//Set the Main Log In controller email using the entered email
 

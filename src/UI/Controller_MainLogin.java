@@ -73,7 +73,7 @@ public class Controller_MainLogin {
 		
 		public void handleBookflightbutton (ActionEvent e) {
 			try {
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("FindFlight.fxml"));
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("FindFlights.fxml"));
 				root = loader.load();
 				Controller_FindFlights findflightcontroller = loader.getController();
 				findflightcontroller.setEmail(this.getEmail());
