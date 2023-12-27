@@ -93,7 +93,17 @@ public class Controller_CreateAccount {
 		}
 		
 		
-		if (!email.matches(".+@.+\\..+")) {//check the format of the email, make sure that it's proper format. // the exclamation point means not 
+		if (!email.matches(".+@.+\\..+")) {//check the format of the email, make sure that it's proper format. // the exclamation point means not. // 
+			
+			/**
+			 * 
+			 * '.+': Matches one or more of any character before the "@" symbol.
+				'@': Matches the "@" symbol.
+				'.+': Matches one or more of any character after the "@" symbol.
+				'\\.': Matches a literal dot (.) in the domain part of the email.
+				'.+': Matches one or more of any character after the dot.
+			 * 
+			 */
 			b = false; // Set the flag to false if the email format is invalid.
 			Alert emailalert = new Alert(Alert.AlertType.ERROR);
 			emailalert.setTitle("Error! Alert dialog!");
