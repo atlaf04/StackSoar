@@ -4,14 +4,18 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller_SplashScreen">
    <children>
-      <ImageView fitHeight="604.0" fitWidth="806.0" layoutX="-4.0" layoutY="-1.0">
+      <ImageView fitHeight="606.0" fitWidth="800.0" layoutX="-2.0" layoutY="-4.0">
          <image>
-            <Image url="@../images/Login%20Page%20Wireframe%20Mobile%20UI%20Prototype%20(Desktop%20Wallpaper).png" />
+            <Image url="@../../../../../../Downloads/Login%20Page%20Wireframe%20Mobile%20UI%20Prototype%20(Desktop%20Wallpaper)-4.png" />
          </image>
       </ImageView>
-      <Button layoutX="371.0" layoutY="553.0" mnemonicParsing="false" onAction="#handlestartbutton" opacity="0.14" prefHeight="26.0" prefWidth="60.0" />
+      <Button layoutX="360.0" layoutY="501.0" mnemonicParsing="false" onAction="#handlestartbutton" prefHeight="26.0" prefWidth="85.0" text="Start Now">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>

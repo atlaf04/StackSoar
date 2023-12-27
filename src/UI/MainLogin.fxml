@@ -5,14 +5,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller_MainLogin">
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller_MainLogin">
    <children>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBackbutton" text="Logout" />
-      <Button layoutX="281.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleBookflightbutton" prefHeight="100.0" prefWidth="150.0" text="Book Flights" />
-      <Button layoutX="484.0" layoutY="246.0" mnemonicParsing="false" onAction="#handleManageReservationsbutton" prefHeight="100.0" prefWidth="150.0" text="Manage Reservations" />
-      <Label fx:id="welcomebacklabel" alignment="CENTER" layoutX="324.0" layoutY="199.0" prefHeight="39.0" prefWidth="253.0" text="Welcome Back to StackSoar" textAlignment="CENTER">
+      <Button layoutX="281.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleBookflightbutton" prefHeight="100.0" prefWidth="150.0" text="Book Flights">
          <font>
-            <Font size="15.0" />
+            <Font name="Times New Roman" size="13.0" />
+         </font></Button>
+      <Button layoutX="484.0" layoutY="246.0" mnemonicParsing="false" onAction="#handleManageReservationsbutton" prefHeight="100.0" prefWidth="150.0" text="Manage Reservations">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Button>
+      <Label fx:id="welcomebacklabel" alignment="CENTER" layoutX="324.0" layoutY="199.0" prefHeight="39.0" prefWidth="253.0" text="Where To Next?" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
          </font>
       </Label>
    </children>

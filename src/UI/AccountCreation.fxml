@@ -7,42 +7,75 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="paneone" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller_CreateAccount">
+<AnchorPane fx:id="paneone" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller_CreateAccount">
    <children>
-      <Button layoutX="359.0" layoutY="383.0" mnemonicParsing="false" onAction="#createAccount" text="Create Account" />
-      <Label fx:id="welcome_label" layoutX="160.0" layoutY="27.0" text="Welcome to StackSoar">
+      <Button layoutX="370.0" layoutY="502.0" mnemonicParsing="false" onAction="#createAccount" text="Create Account">
          <font>
-            <Font name="Arial Hebrew" size="49.0" />
+            <Font name="Times New Roman" size="13.0" />
+         </font></Button>
+      <Label fx:id="welcome_label" layoutX="183.0" layoutY="24.0" text="Welcome to StackSoar" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman" size="49.0" />
          </font></Label>
-      <TextField fx:id="addresstf" layoutX="321.0" layoutY="210.0" />
-      <TextField fx:id="statetf" layoutX="321.0" layoutY="273.0" />
-      <TextField fx:id="securityanswertf" layoutX="539.0" layoutY="336.0" />
-      <Label fx:id="securityQuestion" layoutX="537.0" layoutY="318.0" text=" What is your favorite Programming Language?" />
-      <Label fx:id="address_label" layoutX="322.0" layoutY="194.0" text="Address" />
-      <Label fx:id="State_label" layoutX="323.0" layoutY="247.0" prefHeight="17.0" prefWidth="103.0" text="State" />
+      <TextField fx:id="addresstf" layoutX="315.0" layoutY="197.0" prefHeight="68.0" prefWidth="188.0" />
+      <TextField fx:id="statetf" layoutX="321.0" layoutY="301.0" prefHeight="68.0" prefWidth="188.0" />
+      <TextField fx:id="securityanswertf" layoutX="551.0" layoutY="409.0" prefHeight="68.0" prefWidth="188.0" />
+      <Label fx:id="securityQuestion" alignment="CENTER" layoutX="522.0" layoutY="376.0" prefHeight="36.0" prefWidth="277.0" text=" What is Your Favorite Programming Language?" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Label>
+      <Label fx:id="address_label" alignment="CENTER" layoutX="387.0" layoutY="170.0" text="Address">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Label>
+      <Label fx:id="State_label" alignment="CENTER" layoutX="363.0" layoutY="277.0" prefHeight="17.0" prefWidth="103.0" text="State" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Label>
       <Button layoutX="44.0" layoutY="27.0" mnemonicParsing="false" onAction="#back" text="Back" />
-      <TextField fx:id="firstnametf" layoutX="109.0" layoutY="210.0" />
-      <Text fx:id="FirstName_label" layoutX="97.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
-      <TextField fx:id="lastnametf" layoutX="109.0" layoutY="273.0" />
-      <Text fx:id="LastName_Label" layoutX="97.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
-      <TextField fx:id="ssntf" layoutX="109.0" layoutY="321.0" />
-      <Text fx:id="SSN_label" layoutX="99.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Social Sercuity Number" />
-      <TextField fx:id="ziptf" layoutX="321.0" layoutY="321.0" />
-      <Text fx:id="zipcode_label" layoutX="322.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zipcode" />
-      <TextField fx:id="passwordtf" layoutX="539.0" layoutY="273.0" />
-      <Text fx:id="account_info_label" layoutX="538.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Information">
+      <TextField fx:id="firstnametf" layoutX="86.0" layoutY="199.0" prefHeight="68.0" prefWidth="188.0" />
+      <Text fx:id="FirstName_label" layoutX="147.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" textAlignment="CENTER">
          <font>
-            <Font name="Arial" size="18.0" />
+            <Font name="Times New Roman" size="13.0" />
+         </font></Text>
+      <TextField fx:id="lastnametf" layoutX="81.0" layoutY="307.0" prefHeight="68.0" prefWidth="188.0" />
+      <Text fx:id="LastName_Label" layoutX="147.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" textAlignment="CENTER" wrappingWidth="56.671875">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Text>
+      <TextField fx:id="ssntf" layoutX="82.0" layoutY="404.0" prefHeight="68.0" prefWidth="188.0" />
+      <Text fx:id="SSN_label" layoutX="117.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Social Sercurity Number" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Text>
+      <TextField fx:id="ziptf" layoutX="320.0" layoutY="405.0" prefHeight="68.0" prefWidth="188.0" />
+      <Text fx:id="zipcode_label" layoutX="393.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zipcode">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Text>
+      <TextField fx:id="passwordtf" layoutX="538.0" layoutY="299.0" prefHeight="68.0" prefWidth="188.0" />
+      <Text fx:id="account_info_label" layoutX="295.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Information" textAlignment="CENTER" wrappingWidth="239.80941772460938">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
          </font>
       </Text>
-      <TextField fx:id="emailtf" layoutX="539.0" layoutY="210.0" prefHeight="26.0" prefWidth="160.0" />
-      <Text fx:id="passwordLabel" layoutX="539.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-      <Text fx:id="email_label" layoutX="539.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-      <Text fx:id="information_label" layoutX="244.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Information ">
+      <TextField fx:id="emailtf" layoutX="541.0" layoutY="198.0" prefHeight="68.0" prefWidth="188.0" />
+      <Text fx:id="passwordLabel" layoutX="613.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
-            <Font name="Arial" size="19.0" />
+            <Font name="Times New Roman" size="13.0" />
+         </font></Text>
+      <Text fx:id="email_label" layoutX="610.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Text>
+      <Text fx:id="information_label" layoutX="307.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Enter All of The Following Fields" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman Italic" size="13.0" />
          </font>
       </Text>
-      <Text fx:id="questionPromt" layoutX="540.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Security Question" />
+      <Text fx:id="questionPromt" layoutX="593.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Security Question">
+         <font>
+            <Font name="Times New Roman Italic" size="13.0" />
+         </font></Text>
    </children>
 </AnchorPane>
