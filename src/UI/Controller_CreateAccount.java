@@ -93,7 +93,7 @@ public class Controller_CreateAccount {
 		}
 		
 		
-		if (!email.matches(".+@.+\\..+")) {//check the format of the email, make sure that it's proper format
+		if (!email.matches(".+@.+\\..+")) {//check the format of the email, make sure that it's proper format. // the exclamation point means not 
 			b = false; // Set the flag to false if the email format is invalid.
 			Alert emailalert = new Alert(Alert.AlertType.ERROR);
 			emailalert.setTitle("Error! Alert dialog!");
