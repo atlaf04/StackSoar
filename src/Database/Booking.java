@@ -23,22 +23,22 @@ public class Booking {
      * Polymorphism: This method books a flight for a customer. It throws various
      * exceptions, demonstrating polymorphism in exception handling.
      */
-    public static void bookFlight(String customeremail, int flightid) throws Exception {
+    public static void bookFlight(String customeremail, String flightid) throws Exception {
         try {
             // Abstraction: Database connection details are abstracted within the getConnection method
             Connection con = getConnection();
 
             // Polymorphism: PreparedStatement usage allows flexibility in handling different queries
-            PreparedStatement s = con.prepareStatement("Select Count(*) from Reservation_T where CustomerEmail = ? and FlightId = ?");
+            PreparedStatement s = con.prepareStatement("Select Count(*) from Reservation_Table where CustomerEmail = ? and FlightId = ?");
             s.setString(1, customeremail);
-            s.setInt(2, flightid);
+            s.setString(2, flightid);
 
             ResultSet r = s.executeQuery();
             r.next();
 
             if (r.getInt(1) == 0) { // If the customer has not booked the same flight
-                PreparedStatement s1 = con.prepareStatement("Select Count(*) from Flight_T where FlightId = ? and SeatsAvailable = 0;");
-                s1.setInt(1, flightid);
+                PreparedStatement s1 = con.prepareStatement("Select Count(*) from Flight_Table where FlightId = ? and SeatsAvailable = 0;");
+                s1.setString(1, flightid);
 
                 ResultSet r1 = s1.executeQuery();
                 r1.next();
@@ -65,7 +65,7 @@ public class Booking {
                         Random rand = new Random();
                         int reservationid = rand.nextInt(10000);
 
-                        PreparedStatement statement = con.prepareStatement("Select Count(*) from Reservation_T where ReservationID = ?");
+                        PreparedStatement statement = con.prepareStatement("Select Count(*) from Reservation_Table where ReservationID = ?");
                         statement.setInt(1, reservationid);
 
                         ResultSet result = statement.executeQuery();
@@ -74,7 +74,7 @@ public class Booking {
 
                         while (exist == 1) {
                             reservationid = rand.nextInt(10000);
-                            PreparedStatement statement2 = con.prepareStatement("Select Count(*) from Reservation_T where ReservationID = ?");
+                            PreparedStatement statement2 = con.prepareStatement("Select Count(*) from Reservation_Table where ReservationID = ?");
                             statement2.setInt(1, reservationid);
 
                             ResultSet result2 = statement2.executeQuery();
@@ -84,8 +84,8 @@ public class Booking {
 
                         try {
                             if (Insert.addBooking(reservationid, customeremail, flightid)) {
-                                PreparedStatement update = con.prepareStatement("Update Flight_T set SeatsAvailable = SeatsAvailable - 1 where FlightID = ?");
-                                update.setInt(1, flightid);
+                                PreparedStatement update = con.prepareStatement("Update Flight_Table set SeatsAvailable = SeatsAvailable - 1 where FlightID = ?");
+                                update.setString(1, flightid);
 
                                 update.executeUpdate();
                             }
@@ -120,7 +120,7 @@ public class Booking {
             // Abstraction: Database connection details are abstracted within the getConnection method
             Connection con = getConnection();
 
-            PreparedStatement statement2 = con.prepareStatement("Select FlightID from Reservation_T where ReservationID = ?");
+            PreparedStatement statement2 = con.prepareStatement("Select FlightID from Reservation_Table where ReservationID = ?");
             statement2.setInt(1, reservationid);
 
             ResultSet result = statement2.executeQuery();
@@ -129,12 +129,12 @@ public class Booking {
             String flightid = result.getString(1);
             System.out.println(flightid);
 
-            PreparedStatement statement = con.prepareStatement("Delete from Reservation_T where ReservationID = ?");
+            PreparedStatement statement = con.prepareStatement("Delete from Reservation_Table where ReservationID = ?");
             statement.setInt(1, reservationid);
 
             statement.executeUpdate();
 
-            PreparedStatement update = con.prepareStatement("Update Flight_T set SeatsAvailable = SeatsAvailable + 1 where FlightID = ?");
+            PreparedStatement update = con.prepareStatement("Update Flight_Table set SeatsAvailable = SeatsAvailable + 1 where FlightID = ?");
             update.setString(1, flightid);
 
             update.executeUpdate();
@@ -164,4 +164,9 @@ public class Booking {
         }
         return null;
     }
+
+	public static void bookFlight1(String email, String flightid) {
+		// TODO Auto-generated method stub
+		
+	}
 }

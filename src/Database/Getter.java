@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class Getter {
 
-	static final String db_url = "jdbc:mysql://127.0.0.1:3306/?user=root";
+	static final String db_url = "jdbc:mysql://127.0.0.1:3306/StackSoar";
 	static final String db_username = "root";
 	static final String db_pw = "August13";
 
@@ -60,14 +60,14 @@ public class Getter {
 	}
 	
 	
-	public static Flights getFlight(int id) throws Exception { // get flight using flightid
+	public static Flights getFlight(String flightid) throws Exception { // get flight using flightid
 		Flights flight = new Flights(); 
 		try { 
 			Connection con = getConnection();
-			PreparedStatement statement = con.prepareStatement("Select * from Flight_Table where FlightID = '" + id + "'");
+			PreparedStatement statement = con.prepareStatement("Select * from Flight_Table where FlightID = '" + flightid + "'");
 			ResultSet result = statement.executeQuery();
 			while (result.next()) {
-				flight.setFlightid(result.getInt("FlightID"));
+				flight.setFlightid(result.getString("FlightID"));
 				flight.setDeparturedate(result.getString("DepartureDate"));
 				flight.setDeparturetime(result.getString("DepartureTime"));
 				flight.setArrivaldate(result.getString("ArrivalDate"));
@@ -95,7 +95,7 @@ public class Getter {
 			PreparedStatement statement = con.prepareStatement("Select * from Flight_Table where Origin = '" + origin + "' and Destination = '" + destination +"' and DepartureDate = '"+ departuredate + "' and ArrivalDate = '"+ arrivaldate + "';");
 			ResultSet result = statement.executeQuery();
 			while (result.next()) {
-				flight.setFlightid(result.getInt("FlightID"));
+				flight.setFlightid(result.getString("FlightID"));
 				flight.setDeparturedate(result.getString("DepartureDate"));
 				flight.setDeparturetime(result.getString("DepartureTime"));
 				flight.setArrivaldate(result.getString("ArrivalDate"));
@@ -120,12 +120,12 @@ public class Getter {
 		FlightReservation reservation = new FlightReservation();
 		try {
 			Connection con = getConnection();
-			PreparedStatement statement = con.prepareStatement("Select * from Reservation_T where ReservationId = '" + reservationid+ "' and CustomerEmail = '"+ customeremeail + "'");
+			PreparedStatement statement = con.prepareStatement("Select * from Reservation_Table where ReservationId = '" + reservationid+ "' and CustomerEmail = '"+ customeremeail + "'");
 			ResultSet result = statement.executeQuery();
 			while (result.next()) {
 				reservation.setReservationId(result.getInt("ReservationID"));
 				reservation.setCustomerEmail(result.getString("CustomerEmail"));;
-				reservation.setFlightId(result.getInt("FlightID"));
+				reservation.setFlightId(result.getString("FlightID"));
 			}
 			statement.close();
 			result.close();
@@ -140,7 +140,7 @@ public class Getter {
 	    ArrayList<FlightReservation> reservations = new ArrayList<>();
 	    try {
 	        Connection con = getConnection();
-	        PreparedStatement statement = con.prepareStatement("SELECT * FROM Reservation_T WHERE CustomerEmail = ?");
+	        PreparedStatement statement = con.prepareStatement("SELECT * FROM Reservation_Table WHERE CustomerEmail = ?");
 	        
 	        statement.setString(1, customerEmail);
 
@@ -150,7 +150,7 @@ public class Getter {
 	            FlightReservation reservation = new FlightReservation();
 	            reservation.setReservationId(result.getInt("ReservationID"));
 	            reservation.setCustomerEmail(result.getString("CustomerEmail"));
-	            reservation.setFlightId(result.getInt("FlightID"));
+	            reservation.setFlightId(result.getString("FlightID"));
 
 	            reservations.add(reservation);
 	        }
@@ -166,7 +166,7 @@ public class Getter {
 	    ArrayList<Flights> flights = new ArrayList<>();
 	    try {
 	        Connection con = getConnection();
-	        PreparedStatement statement = con.prepareStatement("SELECT * FROM Flight_T WHERE Origin = ? AND Destination = ? AND DepartureDate = ? AND ArrivalDate = ?");
+	        PreparedStatement statement = con.prepareStatement("SELECT * FROM Flight_Table WHERE Origin = ? AND Destination = ? AND DepartureDate = ? AND ArrivalDate = ?");
 	        statement.setString(1, origin);
 	        statement.setString(2, destination);
 	        statement.setString(3, departureDate);
@@ -176,7 +176,7 @@ public class Getter {
 
 	        while (result.next()) {
 	            Flights flight = new Flights();
-	            flight.setFlightid(result.getInt("FlightID"));
+	            flight.setFlightid(result.getString("FlightID"));
 				flight.setDeparturedate(result.getString("DepartureDate"));
 				flight.setDeparturetime(result.getString("DepartureTime"));
 				flight.setArrivaldate(result.getString("ArrivalDate"));

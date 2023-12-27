@@ -1,7 +1,7 @@
 package project;
 
 public class Flights{
-	private int flightid;
+	private String flightid;
 	private String departuredate;
 	private String departuretime;
 	private String arrivaldate;
@@ -14,7 +14,7 @@ public class Flights{
 	public Flights() {
 		
 	}
-	public Flights (int flightId, String departuredate, String departuretime, String arrivaldate, String arrivalime, String originalairport , String destinationairport,int seatsavailable ) {
+	public Flights (String flightId, String departuredate, String departuretime, String arrivaldate, String arrivalime, String originalairport , String destinationairport,int seatsavailable, String flightid, String arrivaltime, int capacity ) {
 		this.flightid = flightid;
 		this.departuredate = departuredate;
 		this.departuretime = departuretime;
@@ -27,11 +27,11 @@ public class Flights{
 		
 	}
 	
-	public int getFlightid() {
+	public String getFlightid() {
 		return flightid;
 	
 	}
-	public void setFlightid(int flightid) {
+	public void setFlightid(String flightid) {
 		this.flightid = flightid;
 	}
 	

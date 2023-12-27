@@ -89,22 +89,22 @@ public class Controller_MainLogin {
 		}
 		
 		public void handleManageReservationsbutton(ActionEvent e) {
-			try {
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightReservation.fxml"));
-				root = loader.load();
-				Controller_Reservation reservationcontroller = loader.getController();
-				reservationcontroller.setEmail(this.getEmail());
-				reservationcontroller.initialize();
-				
-				
-				primarystage = (Stage)((Node)e.getSource()).getScene().getWindow();
-				scene = new Scene(root,900,600);
-				primarystage.setScene(scene);
-				primarystage.show();
-				}
-				catch (Exception ex) {
-					
-				}
+		    try {
+		        FXMLLoader loader = new FXMLLoader(getClass().getResource("FlightReservation.fxml"));
+		        Parent root = loader.load();
+
+		        // Use the correct controller type
+		        Controller_Reservation reservationController = loader.getController();
+		        reservationController.setEmail(this.getEmail());
+		        reservationController.initialize();
+
+		        Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		        Scene scene = new Scene(root, 900, 600);
+		        primaryStage.setScene(scene);
+		        primaryStage.show();
+		    } catch (Exception ex) {
+		        ex.printStackTrace();
+		    }
 		}
 
-}
+		}

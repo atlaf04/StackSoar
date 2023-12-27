@@ -16,7 +16,7 @@ import project.Flights;
 public class Insert {
 
     // Database connection details.
-    static final String db_url = "jdbc:mysql://127.0.0.1:3306/?user=root";
+    static final String db_url = "jdbc:mysql://127.0.0.1:3306/StackSoar";
     static final String db_username = "root";
     static final String db_pw = "August13";
 
@@ -75,7 +75,7 @@ public class Insert {
         boolean success = false;
 
         // Extracting flight details from the provided object.
-        final int flightid = flight.getFlightid();
+        final String flightid = flight.getFlightid();
         final String departuredate = flight.getDeparturedate();
         final String departuretime = flight.getDeparturetime();
         final String arrivaldate = flight.getArrivaldate();
@@ -106,7 +106,7 @@ public class Insert {
     }
 
     // Method to add a new booking to the database.
-    public static boolean addBooking(int reservationid, String customeremail, int flightid) throws Exception {
+    public static boolean addBooking(int reservationid, String customeremail, String flightid) throws Exception {
         // Flag to track the success of the operation.
         boolean b = false;
 

@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 
 public class Login {
-	static final String db_url = "jdbc:mysql://127.0.0.1:3306/?user=root";
+	static final String db_url = "jdbc:mysql://127.0.0.1:3306/StackSoar";
 	static final String db_username = "root";
 	static final String db_pw = "August13";
 

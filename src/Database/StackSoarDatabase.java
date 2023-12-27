@@ -47,7 +47,7 @@ public class StackSoarDatabase {
     public static void createFlightTable() throws Exception {
         try {
             Connection con = getConnection();
-            PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS Flight_T(" +
+            PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS Flight_Table(" +
                     "FlightID VARCHAR(6) NOT NULL," +
                     "DepartureDate DATE," +
                     "DepartureTime TIME," +
@@ -69,17 +69,17 @@ public class StackSoarDatabase {
 
     // Method to insert values into the Customer_T table
     public static void post() throws Exception {
-        final String first_test = "John";
-        final String last_test = "Miller";
-        final String email_test = "johnmiller@gmail.com";
-        final String username_test = "johnmiller";
+        final String first_test = "Eduardo";
+        final String last_test = "Santos";
+        final String email_test = "es@gmail.com";
+        final String username_test = "ed12";
         final String password_test = "password";
         final String address_test = "123 Street";
         final String state_test = "GA";
-        final String zip_test = "12345";
+        final String zip_test = "54321";
         final String ssn_test = "123456789";
-        final String question_test = "Hi";
-        final String answer_test = "Bye";
+        final String question_test = "Dad";
+        final String answer_test = "Mom";
 
         try {
             Connection con = getConnection();

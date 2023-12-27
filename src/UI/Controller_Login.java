@@ -1,6 +1,5 @@
 package UI;
 
-import Database.Getter;
 import Database.Login;
 
 import javafx.event.ActionEvent;

@@ -22,13 +22,13 @@
       <Button layoutX="419.0" layoutY="111.0" mnemonicParsing="false" onAction="#Search" text="Search" />
       <TableView fx:id="tableview" layoutY="143.0" prefHeight="400.0" prefWidth="900.0">
         <columns>
-          <TableColumn fx:id="idview" prefWidth="120.0" text="ID" />
-          <TableColumn fx:id="originview" prefWidth="130.0" text="Origin" />
-            <TableColumn fx:id="departuredateview" prefWidth="130.0" text="Departure Date" />
-            <TableColumn fx:id="departuretimeview" prefWidth="130.0" text="Departure Time" />
-            <TableColumn fx:id="destinationview" prefWidth="130.0" text="Destination" />
-            <TableColumn fx:id="arrivaldateview" prefWidth="130.0" text="Arrival Date" />
-            <TableColumn fx:id="arrivaltimeview" prefWidth="130.0" text="Arrival Time" />
+          <TableColumn fx:id="idview" onEditStart="#initialize" prefWidth="120.0" text="ID" />
+          <TableColumn fx:id="originview" onEditStart="#initialize" prefWidth="130.0" text="Origin" />
+            <TableColumn fx:id="destinationview" onEditStart="#initialize" prefWidth="130.0" text="Destination" />
+            <TableColumn fx:id="departuredateview" onEditStart="#initialize" prefWidth="130.0" text="Departure Date" />
+            <TableColumn fx:id="departuretimeview" onEditStart="#initialize" prefWidth="130.0" text="Departure Time" />
+            <TableColumn fx:id="arrivaldateview" onEditStart="#initialize" prefWidth="130.0" text="Arrival Date" />
+            <TableColumn fx:id="arrivaltimeview" onEditStart="#initialize" prefWidth="130.0" text="Arrival Time" />
         </columns>
       </TableView>
       <Button layoutX="411.0" layoutY="551.0" mnemonicParsing="false" onAction="#Book" text="Book Flight" />

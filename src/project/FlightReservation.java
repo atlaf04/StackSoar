@@ -3,7 +3,7 @@ package project;
 public class FlightReservation {
 
 	private int reservationId;
-    private int flightId;
+    private String flightId;
     private String customerEmail;
 
     // Default constructor
@@ -12,7 +12,7 @@ public class FlightReservation {
     }
 
     //  constructor w parameters to initialize reservation details
-    public FlightReservation(int reservationId, String customerEmail, int flightId) {
+    public FlightReservation(int reservationId, String customerEmail, String flightId) {
         // Assigning values passed as parameters to the respective class variables
         this.reservationId = reservationId;
         this.flightId = flightId;
@@ -30,12 +30,12 @@ public class FlightReservation {
     }
 
     // getter method to retrieve flight ID
-    public int getFlightId() {
+    public String getFlightId() {
         return flightId;
     }
 
     // setter method for updating flight ID
-    public void setFlightId(int flightId) {
+    public void setFlightId(String flightId) {
         this.flightId = flightId;
     }
 
