@@ -21,7 +21,9 @@ public class StackSoarDatabase {
     // Method to create the Customer_T table
     public static void createCustomerTable() throws Exception {
         try {
-            Connection con = getConnection();
+            // Database connection
+        	Connection con = getConnection();
+            // SQL query to create the Customer_Table
             PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS Customer_Table(" +
                     "CustomerEmail VARCHAR(100) NOT NULL," +
                     "CustomerPassword VARCHAR(30)," +
@@ -33,7 +35,9 @@ public class StackSoarDatabase {
                     "CustomerSSN VARCHAR(9)," +
                     "CustomerSecurityAnswer VARCHAR(100)," +
                     "PRIMARY KEY(CustomerEmail));");
+            // Execute the query
             create.executeUpdate();
+            // Close resources
             create.close();
         } catch (Exception ex) {
             System.out.println(ex);
@@ -47,6 +51,8 @@ public class StackSoarDatabase {
     public static void createFlightTable() throws Exception {
         try {
             Connection con = getConnection();
+            
+            // SQL query to create the Flight_Table
             PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS Flight_Table(" +
                     "FlightID VARCHAR(6) NOT NULL," +
                     "DepartureDate DATE," +
