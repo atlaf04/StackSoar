@@ -33,7 +33,7 @@ public class Getter {
 			ResultSet result = statement.executeQuery();
 			while (result.next()) { // try getting the customer information and set
 				
-				cust.setEmail(result.getString(1));
+				cust.setEmail(result.getString(1)); // column index inside of the string in result set
 				cust.setPassword(result.getString(2));
 				cust.setFirstname(result.getString(3));
 				cust.setLastname(result.getString(4));
@@ -166,9 +166,9 @@ public class Getter {
 	    try {
 	        Connection con = getConnection();
 	        PreparedStatement statement = con.prepareStatement("SELECT * FROM Flight_Table WHERE Origin = ? AND Destination = ? AND DepartureDate = ? AND ArrivalDate = ?");
-	        statement.setString(1, origin);
+	        statement.setString(1, origin); // parameters for the prepared statements. prevents insertion attacks when analyzing the data. and indices start at 1
 	        statement.setString(2, destination);
-	        statement.setString(3, departureDate);
+	        statement.setString(3, departureDate); //  setString method to tell the database what to put in the ?:
 	        statement.setString(4, arrivalDate);
 
 	        ResultSet result = statement.executeQuery();
