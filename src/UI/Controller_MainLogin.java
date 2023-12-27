@@ -30,11 +30,13 @@ public class Controller_MainLogin {
 
 		public String getEmail() {
 			return email;
+		    // Getter and setter for the email property
 		}
 
 		public void setEmail(String email) {
 			this.email = email;
 			try {
+	            // Update the welcome label with the customer's first name, using the getter method to extract information from the database
 				welcomebacklabel.setText("Welcome back " + Getter.getCustomer(email).getFirstname());
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -76,8 +78,13 @@ public class Controller_MainLogin {
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("FindFlights.fxml"));
 				root = loader.load();
 				Controller_FindFlights findflightcontroller = loader.getController();
-				findflightcontroller.setEmail(this.getEmail());
+				findflightcontroller.setEmail(this.getEmail()); // 
 
+				/**
+				 * setting the email property of the Controller_FindFlights 
+				 * controller with the email value obtained from the current instance of Controller_MainLogin using this.getEmail().
+				 */
+				
 				primarystage = (Stage)((Node)e.getSource()).getScene().getWindow();
 				scene = new Scene(root,900,600);
 				primarystage.setScene(scene);

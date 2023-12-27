@@ -100,7 +100,7 @@ public class Flights{
 	}
 	
 	@Override 
-	public String toString() {
+	public String toString() {     // Creating a string representation of the reservation details
 		return "Flight with id " + flightid + "\nDeparture date: " + departuredate + ", Time: "  + departuretime + "\nArrival date: " +arrivaldate + ",Time: " + arrivaltime + "\nOrigin: " + originalairport + "\nDestination: " + destinationairport + "\nCapacity: " + capacity + "\nSeatsAvailable: " + seatsavailable;
 	}
 	

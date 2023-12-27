@@ -15,7 +15,7 @@ import project.Flights;
 public class Booking {
 
     // Abstraction: Database connection details are abstracted from the calling code
-    static final String db_url = Getter.db_url; 
+    static final String db_url = Getter.db_url;  // final because this is not intended to be changed. 
     static final String db_username = Getter.db_username;
     static final String db_pw = Getter.db_pw;
 
@@ -31,7 +31,7 @@ public class Booking {
             // Polymorphism: PreparedStatement usage allows flexibility in handling different queries
             PreparedStatement s = con.prepareStatement("Select Count(*) from Reservation_Table where CustomerEmail = ? and FlightId = ?"); // the question marks serve as a placeholder for the parameters. the question mark is a way of telling the database that there will be values provided for these positions when the statement is executed, and those values will be safe and properly formatted
             s.setString(1, customeremail);   // 1: This is the index of the parameter in the SQL query. It starts from 1.
-            s.setString(2, flightid); 
+            s.setString(2, flightid); // we are setting the string with its respective paramters
 
             ResultSet r = s.executeQuery(); // This method executes the SQL query and returns a ResultSet, which contains the count of reservations for the given customer and flight combination.
             r.next(); // This method moves the cursor to the first row of the result set. In this context, it's used to check the count of reservations.
@@ -39,7 +39,7 @@ public class Booking {
 
             if (r.getInt(1) == 0) {//  checks if the count of reservations for the given customer and flight is zero. If it is, it means the customer has not booked the same flight.
                 PreparedStatement s1 = con.prepareStatement("Select Count(*) from Flight_Table where FlightId = ? and SeatsAvailable = 0;"); 
-                s1.setString(1, flightid); // sets the value for the placeholder in the prepared statement to the given flightid.
+                s1.setString(1, flightid); // sets the value for the placeholder in the prepared statement to the given flightid. //
 
                 ResultSet r1 = s1.executeQuery();
                 r1.next(); // This method moves the cursor to the first row of the result set. In this context, it's used to check the count of reservations.

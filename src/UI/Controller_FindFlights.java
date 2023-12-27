@@ -31,7 +31,7 @@ public class Controller_FindFlights {
     private AnchorPane anchorpane;
 
     @FXML
-    private TableColumn<Flights, String> arrivaldateview;
+    private TableColumn<Flights, String> arrivaldateview; 
 
     @FXML
     private DatePicker arrivaldp;
@@ -99,22 +99,29 @@ public class Controller_FindFlights {
     }
 
     public String getDepartureDate(ActionEvent e) { // get depart date from datetime
-        return departuredp.getValue().toString();
+        return departuredp.getValue().toString(); // This is used to retrieve the value (date) selected by the user in the DatePicker with the variable name arrivaldp. The .toString() is called to convert the date value to its string representation.
     }
 
     public String getArrivalDate(ActionEvent e) { // get arrival date from datetime
-        return arrivaldp.getValue().toString();
+        return arrivaldp.getValue().toString();//  The .toString() is called to convert the date value to its string representation.
     }
 
     public void Search(ActionEvent e) { // handle search button
-        String arrivaldate = this.getArrivalDate(e);
+        String arrivaldate = this.getArrivalDate(e); 
         String departuredate = this.getDepartureDate(e);
         String origin = origintf.getText().trim();
         String destination = destinationtf.getText().trim();
 
         try { // try get array of flights and convert it to observable list
-            ArrayList<Flights> searchflights = Getter.getFlights(origin, destination, departuredate, arrivaldate);
-            flightlist = FXCollections.observableArrayList(searchflights);
+            ArrayList<Flights> searchflights = Getter.getFlights(origin, destination, departuredate, arrivaldate); 
+            
+            // searchflights is an ArrayList that holds the search results, and it is then converted into an ObservableList (flightlist). 
+            //This ObservableList is used to populate the TableView in the GUI (tableview.setItems(flightlist)).
+            
+            flightlist = FXCollections.observableArrayList(searchflights); 
+            
+            // Call the initialize() method to set up the TableView with the search results
+
             this.initialize();
 
         } catch (Exception ex) {
@@ -125,9 +132,9 @@ public class Controller_FindFlights {
         }
     }
     @FXML
-    public void initialize() { 
+    public void initialize() { // initialize() method is used for initializing the controller's state when the associated FXML file is loaded. 
 
-    	idview.setCellValueFactory(new PropertyValueFactory<>("flightid"));
+    	idview.setCellValueFactory(new PropertyValueFactory<>("flightid")); // setCellValueFactory(new PropertyValueFactory<>("property")) is used to define how the data in each column should be populated based on the properties of the Flights class.
         originview.setCellValueFactory(new PropertyValueFactory<>("originalairport"));
         departuredateview.setCellValueFactory(new PropertyValueFactory<>("departuredate"));
         departuretimeview.setCellValueFactory(new PropertyValueFactory<>("departuretime"));
@@ -140,7 +147,7 @@ public class Controller_FindFlights {
 
     @FXML
     public void Book(ActionEvent e) { // handle book button
-        Flights selectedflight = tableview.getSelectionModel().getSelectedItem(); // get the information of the selected flight
+        Flights selectedflight = tableview.getSelectionModel().getSelectedItem(); // get the information of the selected flight, getSelectionModel() is a class in JavaFX, and selected item is a method provided by the selection model class
         try {
             Booking.bookFlight(this.getEmail(), selectedflight.getFlightid()); // book the flight
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
