@@ -11,14 +11,14 @@ public class InsertFlightData {
             // Call the method to insert sample flights
             insertSampleFlights();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace();    //e is an reference to an exception object , printstacktrace is a throwable method
         }
     }
 
-    public static void insertSampleFlights() throws Exception {
+    public static void insertSampleFlights() throws Exception {  
         try {
             Connection con = Insert.getConnection(); // Reuse the getConnection method from Insert class
-            PreparedStatement statement = con.prepareStatement(
+            PreparedStatement statement = con.prepareStatement(   //This line creates a PreparedStatement object, which is a precompiled SQL statement that can be executed multiple times. It is used to insert data into a database table.
                     "INSERT INTO Flight_Table (FlightID, DepartureDate, DepartureTime, ArrivalDate, ArrivalTime, Origin, Destination, Capacity, SeatsAvailable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
             );
 
@@ -82,16 +82,17 @@ public class InsertFlightData {
             // ... (repeat for more dates)
 
 
-            statement.close();
-        } catch (SQLException e) {
-            e.printStackTrace();  // Print the stack trace
-            System.out.println("Error inserting sample flights: " + e.getMessage());
+            statement.close();  // is used to close a PreparedStatement object in Java
+        } catch (SQLException e) { //is part of a try-catch block in Java and is used for handling exceptions
+            e.printStackTrace();  //  is used to print the stack trace of an exception to the standard error stream in Java
+            System.out.println("Error inserting sample flights: " + e.getMessage()); 
         }
     }
 
     private static void insertFlight(PreparedStatement statement, String flightID, String departureDate, String departureTime,
             String arrivalDate, String arrivalTime, String origin, String destination, int capacity) {
         try {
+        	// Set values for the prepared statement parameters
             statement.setString(1, flightID);
             statement.setString(2, departureDate);
             statement.setString(3, departureTime);
@@ -101,9 +102,11 @@ public class InsertFlightData {
             statement.setString(7, destination);
             statement.setInt(8, capacity);
             statement.setInt(9, capacity); // Initially, all seats are available
-
+            
+            // Execute the update to insert the flight into the database
             statement.executeUpdate();
         } catch (SQLException e) {
+            // Handle SQLException
             e.printStackTrace();  // Print the stack trace
             System.out.println("Error inserting flight: " + e.getMessage());
         }
