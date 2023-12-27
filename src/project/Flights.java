@@ -1,7 +1,7 @@
 package project;
 
 public class Flights{
-	private String flightid;
+	private String flightid; //     // Private fields for encapsulation, these can be accessed by other classes by using getter methods
 	private String departuredate;
 	private String departuretime;
 	private String arrivaldate;
@@ -11,7 +11,7 @@ public class Flights{
 	private String destinationairport;
 	private int seatsavailable;
 	
-	public Flights() {
+	public Flights() { // / Default constructor which allows us to make new objects of the Flights() class
 		
 	}
 	public Flights (String flightId, String departuredate, String departuretime, String arrivaldate, String arrivalime, String originalairport , String destinationairport,int seatsavailable, String flightid, String arrivaltime, int capacity ) {
@@ -27,7 +27,7 @@ public class Flights{
 		
 	}
 	
-	public String getFlightid() {
+	public String getFlightid() { // public field can be accessed directly from any other class. 
 		return flightid;
 	
 	}

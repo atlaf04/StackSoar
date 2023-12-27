@@ -102,13 +102,13 @@ public class Controller_Reservation {
 	}
 	
 	@FXML
-	public void initialize() { 
+	public void initialize() {  // initialize() method is used for initializing the controller's state when the associated FXML file is loaded. 
 		try {
-			ArrayList<FlightReservation> reservations = Getter.getReservations(this.getEmail());	 // get reservations list of customers
-			//ArrayList<Flight> flights = new ArrayList<Flight>();
-			ArrayList<Flights> flights = Getter.getAllFlightsfromAccount(this.getEmail()); // get flights list of customers
+			ArrayList<FlightReservation> reservations = Getter.getReservations(this.getEmail());	 // get reservations list of customers from the flight reservation class
+		
+			ArrayList<Flights> flights = Getter.getAllFlightsfromAccount(this.getEmail()); // get flights list of customersGetter.getAllFlightsfromAccount(this.getEmail()): This method call retrieves a list of flights associated with the customer whose email is obtained using this.getEmail(). The result is stored in the flights ArrayList.
 
-			flightlist = FXCollections.observableArrayList(flights);
+			flightlist = FXCollections.observableArrayList(flights); // The retrieved flights are then stored in an ObservableList to be used in the user interface.
 			reservationlist = FXCollections.observableArrayList(reservations);
 
 

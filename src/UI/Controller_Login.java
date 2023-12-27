@@ -85,9 +85,11 @@ public class Controller_Login { //LEXI
     
     public void handleCreateAccountButtonAction(ActionEvent e) { 
         // Handling the "Create Account" button click
+    	
+    	// 
 
     	//Switch to "AccountCreation.fxml" scene
-    	switchScene("AccountCreation.fxml",e);
+    	switchScene("AccountCreation.fxml",e); //the e is the associated action event that is associated with the button
     		
     	
     }
